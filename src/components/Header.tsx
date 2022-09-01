@@ -11,15 +11,13 @@ export const Header = () => {
           <h2>Estágio Store</h2>
         </Link>
 
-        <Link to="/cart">
-          <div>
+        <MyCart to="/cart">
             <div>
               <strong>Meu Carrinho</strong>
               <span>1 item</span>
             </div>
             <MdShoppingBasket size={20} color="#fff" />
-          </div>
-        </Link>
+        </MyCart>
       </HeaderWrapper>
     </HeaderContainer>
   )
@@ -41,13 +39,13 @@ const HeaderWrapper = styled.div`
   a {
     text-decoration: none;
   }
-
-
   h2 {
     color: #E3313C;
   }
 
-  div {
+`;
+
+const MyCart = styled(Link)`
     display: flex;
     align-items: center;
 
@@ -63,5 +61,4 @@ const HeaderWrapper = styled.div`
         text-align: right;
       }
     }
-  }
 `;
