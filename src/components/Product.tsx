@@ -1,13 +1,18 @@
 import React from 'react';
 import styled from 'styled-components';
 import {MdShoppingCart} from 'react-icons/md'
+import { ProductTypes } from '../pages/Home';
 
-export const Product = () => {
+interface ProductProps{
+  data: ProductTypes
+}
+
+export const Product = ({data: product}: ProductProps) => {
   return (
     <ProductContainer>
-      <img src='https://rocketseat-cdn.s3-sa-east-1.amazonaws.com/modulo-redux/tenis1.jpg' alt='compra aí'/>
-      <h3>Tênis de COrrida</h3>
-      <span>300 conto</span>
+      <img src={product.image} alt='compra aí'/>
+      <h3>{product.title}</h3>
+      <span>{product.price}</span>
       <button>
         <div>
           <MdShoppingCart size={16} color="#fff" />
